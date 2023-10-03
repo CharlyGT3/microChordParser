@@ -1,4 +1,4 @@
-import {chordParser, textParce, htmlParce, sustainTransposer, bemolTransposer, weirdTransposer} from "./microChordParce.js"
+import {chordParser, textParse, htmlParse, sustainTransposer, bemolTransposer, weirdTransposer} from "./microChordParce.js"
 
 // ? ejemplo de uso
 
@@ -12,7 +12,7 @@ The king of glory, the king above all kings`
 
 // * test de la función sustainTransposer con textParser
 
-console.log(textParce(sustainTransposer(chordParser(songs), 1)))
+console.log(textParse(sustainTransposer(chordParser(songs), 1)))
 
 // * test de la función bemolTransposer con textParser
 
@@ -20,16 +20,16 @@ console.log(textParce(bemolTransposer(chordParser(songs), 1)))
 
 // * test de la función weirdTransposer con textParser
 
-console.log(textParce(weirdTransposer(chordParser(songs), 12)))
+console.log(textParse(weirdTransposer(chordParser(songs), 12)))
 
 // * test de la función sustainTransposer con htmlParser
 
-console.log(htmlParce(sustainTransposer(chordParser(songs))))
+console.log(htmlParse(sustainTransposer(chordParser(songs))))
 
 // * test de la función bemolTransposer con htmlParser
 
-console.log(htmlParce(bemolTransposer(chordParser(songs))))
+console.log(htmlParse(bemolTransposer(chordParser(songs))))
 
 // * test de la función weirdTransposer con htmlParser
 
-console.log(htmlParce(weirdTransposer(chordParser(songs))))
+console.log(htmlParse(weirdTransposer(chordParser(songs))))
