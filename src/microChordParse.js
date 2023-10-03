@@ -15,7 +15,7 @@ bass = ['/', '-']
 
 const regNote = /^ *[A-Ga-g](#|b|&)?m?\+?(sus|add|maj|dim|aug)?[0-9]?( *(-|\/) *[A-G](#|b)?)?( +[A-Ga-g](#|b|&)?m?\+?(sus|add|maj|dim|aug)?[0-9]?( *(-|\/) *[A-G](#|b|&)?)? *)* *$/g
 
-// * Funciones externas ----------------------------------------------------------
+// * Funciones publica -----------------------------------------------------------
 
 /**
  * Esta función es para crear un objeto con las notas, acordes, intervalos y bajos a partir de un string que posea una canción con acordes
