@@ -1,0 +1,13 @@
+{
+  "name": "micro-chord-parce",
+  "version": "1.0.0",
+  "description": "Libreria para parsear acordes y tranponerlos",
+  "main": "src/microChordParce.js",
+  "type": "module",
+  "scripts": {
+    "test": "node src/example.js"
+  },
+  "keywords": [],
+  "author": "CharlyGT3",
+  "license": "ISC"
+}
