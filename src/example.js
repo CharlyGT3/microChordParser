@@ -1,4 +1,4 @@
-import {chordParser, textParse, htmlParse, sustainTransposer, bemolTransposer, weirdTransposer} from "./microChordParce.js"
+import {chordParser, textParse, htmlParse, sustainTransposer, bemolTransposer, weirdTransposer} from "./microChordParse.js"
 
 // ? ejemplo de uso
 
@@ -16,7 +16,7 @@ console.log(textParse(sustainTransposer(chordParser(songs), 1)))
 
 // * test de la función bemolTransposer con textParser
 
-console.log(textParce(bemolTransposer(chordParser(songs), 1)))
+console.log(textParse(bemolTransposer(chordParser(songs), 1)))
 
 // * test de la función weirdTransposer con textParser
 
