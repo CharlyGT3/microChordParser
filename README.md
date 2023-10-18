@@ -4,7 +4,7 @@
 npm i micro-chord-parse
 ```
 
-## Demostraciones
+## Demonstrations
 
 ```javascript
 import {chordParser, textParse, htmlParse, sustainTransposer, bemolTransposer, weirdTransposer} from "microChordParse.js"
@@ -17,7 +17,7 @@ Gm                     F               Eb
 The king of glory, the king above all kings`
 ```
 
-### Test de la función sustainTransposer con textParser
+### Testing the sustainTransposer function with textParser
 
 ```javascript
 
@@ -33,7 +33,7 @@ G#m                     F#               E
 The king of glory, the king above all kings
 ```
 
-### Test de la función bemolTransposer con textParser
+### Testing the bemolTransposer function with textParser
 
 ```javascript
 
@@ -49,7 +49,7 @@ Abm                     Gb               E
 The king of glory, the king above all kings
 ```
 
-### Test de la función weirdTransposer con textParser
+### Testing the weirdTransposer function with textParser
 
 ```javascript
 
@@ -65,7 +65,7 @@ Gm                     F               E&
 The king of glory, the king above all kings
 ```
 
-### Test de la función sustainTransposer con htmlParser
+### Testing the sustainTransposer function with htmlParser
 
 ```javascript
 
@@ -83,7 +83,7 @@ Gm                     F               D#
 </div>
 ```
 
-### Test de la función bemolTransposer con htmlParser
+### Testing the bemolTransposer function with htmlParser
 
 ```javascript
 
@@ -101,7 +101,7 @@ Gm                     F               Eb
 </div>
 ```
 
-### Test de la función weirdTransposer con htmlParser
+### Testing the weirdTransposer function with htmlParser
 
 ```javascript
 
