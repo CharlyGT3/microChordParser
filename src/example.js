@@ -1,4 +1,10 @@
-import {chordParser, textParse, htmlParse, sustainTransposer, bemolTransposer} from "./microChordParse.js"
+import {
+  chordParser,
+  textParse,
+  htmlParse,
+  sustainTransposer,
+  bemolTransposer
+} from "./microChordParse.js"
 
 // ? ejemplo de uso
 
