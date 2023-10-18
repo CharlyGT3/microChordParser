@@ -110,11 +110,11 @@ console.log(htmlParse(weirdTransposer(chordParser(songs))))
 
 ```bash
 <div class="chord">
-Bb
+B&
 <div class="letter">Who breaks the power of sin and darkness</div>
 Eb
 <div class="letter">Whose love is mighty and so much stronger</div>
-Gm                     F               Eb
+Gm                     F               E&
 <div class="letter">The king of glory, the king above all kings</div>
 </div>
 ```
