@@ -8,8 +8,8 @@ npm i micro-chord-parse
 
 ```javascript
 import {chordParser,
-  textParse,
-  htmlParse,
+  textParser,
+  htmlParser,
   sustainTransposer,
   bemolTransposer,
   weirdTransposer

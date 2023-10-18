@@ -73,7 +73,7 @@ export const chordParser = (song) => {
  * @returns {string} devuelve un string con de la canción y los acordes
  */
 
-export const textParse = (objet) => parser(objet, '', '\n', '\n', '')
+export const textParser = (objet) => parser(objet, '', '\n', '\n', '')
 
 /**
  * Esta función es para crear un string especial para html de una canción con acordes a partir de un objeto que posea las notas, acordes, intervalos y bajos
@@ -81,7 +81,7 @@ export const textParse = (objet) => parser(objet, '', '\n', '\n', '')
  * @returns {string} devuelve un string especial para html con de la canción y los acordes
  */
 
-export const htmlParse = (objet) => parser(objet, '<div class="chord">', '<div class="letter">', '</div>', '</div>')
+export const htmlParser = (objet) => parser(objet, '<div class="chord">', '<div class="letter">', '</div>', '</div>')
 
 /**
  * Esta función recibiendo un objeto de la función chordParser y la tranpone a la cantidad de semitonos que se le indique en formato sostenido

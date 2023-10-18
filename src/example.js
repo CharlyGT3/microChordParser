@@ -1,7 +1,7 @@
 import {
   chordParser,
-  textParse,
-  htmlParse,
+  textParser,
+  htmlParser,
   sustainTransposer,
   bemolTransposer
 } from "./microChordParse.js"
