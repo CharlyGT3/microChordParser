@@ -2,7 +2,8 @@ import {chordParser, textParse, htmlParse, sustainTransposer, bemolTransposer} f
 
 // ? ejemplo de uso
 
-var songs = `Bb
+var songs = 
+`Bb
 Who breaks the power of sin and darkness
 Eb
 Whose love is mighty and so much stronger
