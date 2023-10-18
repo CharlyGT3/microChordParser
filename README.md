@@ -49,22 +49,6 @@ Abm                     Gb               E
 The king of glory, the king above all kings
 ```
 
-### Testing the weirdTransposer function with textParser
-
-```javascript
-
-console.log(textParse(weirdTransposer(chordParser(songs), 12)))
-```
-
-```bash
-B&
-Who breaks the power of sin and darkness
-E&
-Whose love is mighty and so much stronger
-Gm                     F               E&
-The king of glory, the king above all kings
-```
-
 ### Testing the sustainTransposer function with htmlParser
 
 ```javascript
@@ -97,24 +81,6 @@ Bb
 Eb
 <div class="letter">Whose love is mighty and so much stronger</div>
 Gm                     F               Eb
-<div class="letter">The king of glory, the king above all kings</div>
-</div>
-```
-
-### Testing the weirdTransposer function with htmlParser
-
-```javascript
-
-console.log(htmlParse(weirdTransposer(chordParser(songs))))
-```
-
-```bash
-<div class="chord">
-B&
-<div class="letter">Who breaks the power of sin and darkness</div>
-Eb
-<div class="letter">Whose love is mighty and so much stronger</div>
-Gm                     F               E&
 <div class="letter">The king of glory, the king above all kings</div>
 </div>
 ```

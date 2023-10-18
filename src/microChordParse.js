@@ -1,12 +1,11 @@
 // * Variables -------------------------------------------------------------------
 
-// ? Array de notas, acidentales, acordes, intervalos, bajos y notas raras
+// ? Array de notas, acidentales, acordes, intervalos y bajos
 
 const notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
-accidentals = ['#', 'b', '&'],
+accidentals = ['#', 'b'],
 notesSustain = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'],
 notesBemol = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'],
-weirdNotes = ['A', 'B&', 'B', 'C', 'D&', 'D', 'E&', 'E', 'F', 'G&', 'G', 'A&'],
 chords = ['m', '+', 'sus', 'add', 'maj', 'dim', 'aug'],
 intervals = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
 bass = ['/', '-']
@@ -102,15 +101,6 @@ export const sustainTransposer = (objet, semitone = 0) => chordTransposer(objet,
 
 export const bemolTransposer = (objet, semitone = 0) => chordTransposer(objet, semitone, notesBemol)
 
-/**
- * Esta función recibiendo un objeto de la función chordParser y la tranpone a la cantidad de semitonos que se le indique en formato extraño
- * @param {object} objet inserta el objeto de la función chordParser
- * @param {number} semitone inserta el número de semitonos que se quiere transponer
- * @returns {object} devuelve un objeto con las notas, acordes, intervalos y bajos transpuestos
- */
-
-export const weirdTransposer = (objet, semitone = 0) => chordTransposer(objet, semitone, weirdNotes)
-
 // * Funciones internas ----------------------------------------------------------
 
 function chordTransposer(objet, semitone, noteTypeSelect) {
@@ -127,10 +117,6 @@ function chordTransposer(objet, semitone, noteTypeSelect) {
           break;
         case notesBemol.includes(result[i].note):
           index = notesBemol.indexOf(result[i].note);
-          result[i].note = noteTypeSelect[rangeAdjust(index + semitone)];
-          break;
-        case weirdNotes.includes(result[i].note):
-          index = weirdNotes.indexOf(result[i].note);
           result[i].note = noteTypeSelect[rangeAdjust(index + semitone)];
           break;
         default:

@@ -18,10 +18,6 @@ console.log(textParse(sustainTransposer(chordParser(songs), 1)))
 
 console.log(textParse(bemolTransposer(chordParser(songs), 1)))
 
-// * test de la función weirdTransposer con textParser
-
-console.log(textParse(weirdTransposer(chordParser(songs), 12)))
-
 // * test de la función sustainTransposer con htmlParser
 
 console.log(htmlParse(sustainTransposer(chordParser(songs))))
@@ -29,7 +25,3 @@ console.log(htmlParse(sustainTransposer(chordParser(songs))))
 // * test de la función bemolTransposer con htmlParser
 
 console.log(htmlParse(bemolTransposer(chordParser(songs))))
-
-// * test de la función weirdTransposer con htmlParser
-
-console.log(htmlParse(weirdTransposer(chordParser(songs))))
