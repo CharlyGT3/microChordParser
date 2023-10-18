@@ -19,16 +19,16 @@ The king of glory, the king above all kings`
 
 // * test de la función sustainTransposer con textParser
 
-console.log(textParse(sustainTransposer(chordParser(songs), 1)))
+console.log(textParser(sustainTransposer(chordParser(songs), 1)))
 
 // * test de la función bemolTransposer con textParser
 
-console.log(textParse(bemolTransposer(chordParser(songs), 1)))
+console.log(textParser(bemolTransposer(chordParser(songs), 1)))
 
 // * test de la función sustainTransposer con htmlParser
 
-console.log(htmlParse(sustainTransposer(chordParser(songs))))
+console.log(htmlParser(sustainTransposer(chordParser(songs))))
 
 // * test de la función bemolTransposer con htmlParser
 
-console.log(htmlParse(bemolTransposer(chordParser(songs))))
+console.log(htmlParser(bemolTransposer(chordParser(songs))))

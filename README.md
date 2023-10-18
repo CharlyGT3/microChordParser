@@ -1,7 +1,7 @@
 ## Install
 
 ```bash
-npm i micro-chord-parse
+npm i micro-chord-parser
 ```
 
 ## Demonstrations
@@ -13,7 +13,7 @@ import {chordParser,
   sustainTransposer,
   bemolTransposer,
   weirdTransposer
-} from "microChordParse.js"
+} from "microChordParser.js"
 
 var songs =
 `Bb
@@ -28,7 +28,7 @@ The king of glory, the king above all kings`
 
 ```javascript
 
-console.log(textParse(sustainTransposer(chordParser(songs), 1)))
+console.log(textParser(sustainTransposer(chordParser(songs), 1)))
 ```
 
 ```bash
@@ -44,7 +44,7 @@ The king of glory, the king above all kings
 
 ```javascript
 
-console.log(textParse(bemolTransposer(chordParser(songs), 1)))
+console.log(textParser(bemolTransposer(chordParser(songs), 1)))
 ```
 
 ```bash
@@ -60,7 +60,7 @@ The king of glory, the king above all kings
 
 ```javascript
 
-console.log(htmlParse(sustainTransposer(chordParser(songs))))
+console.log(htmlParser(sustainTransposer(chordParser(songs))))
 ```
 
 ```bash
@@ -78,7 +78,7 @@ Gm                     F               D#
 
 ```javascript
 
-console.log(htmlParse(bemolTransposer(chordParser(songs))))
+console.log(htmlParser(bemolTransposer(chordParser(songs))))
 ```
 
 ```bash
