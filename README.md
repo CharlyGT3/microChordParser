@@ -7,9 +7,16 @@ npm i micro-chord-parse
 ## Demonstrations
 
 ```javascript
-import {chordParser, textParse, htmlParse, sustainTransposer, bemolTransposer, weirdTransposer} from "microChordParse.js"
+import {chordParser,
+  textParse,
+  htmlParse,
+  sustainTransposer,
+  bemolTransposer,
+  weirdTransposer
+} from "microChordParse.js"
 
-var songs = `Bb
+var songs =
+`Bb
 Who breaks the power of sin and darkness
 Eb
 Whose love is mighty and so much stronger

@@ -8,7 +8,7 @@ import {
 
 // ? ejemplo de uso
 
-var songs = 
+var songs =
 `Bb
 Who breaks the power of sin and darkness
 Eb
