@@ -1,8 +1,8 @@
 {
-  "name": "micro-chord-parse",
+  "name": "micro-chord-parser",
   "version": "1.0.0",
   "description": "Libreria para parsear acordes y tranponerlos",
-  "main": "src/microChordParse.js",
+  "main": "src/microChordParser.js",
   "type": "module",
   "scripts": {
     "test": "node src/example.js"

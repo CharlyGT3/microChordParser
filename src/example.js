@@ -4,7 +4,7 @@ import {
   htmlParser,
   sustainTransposer,
   bemolTransposer
-} from "./microChordParse.js"
+} from "./microChordParser.js"
 
 // ? ejemplo de uso
 
