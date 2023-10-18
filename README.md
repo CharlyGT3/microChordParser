@@ -9,8 +9,6 @@ npm i micro-chord-parse
 ```javascript
 import {chordParser, textParse, htmlParse, sustainTransposer, bemolTransposer, weirdTransposer} from "microChordParse.js"
 
-// ? ejemplo de uso
-
 var songs = `Bb
 Who breaks the power of sin and darkness
 Eb
@@ -19,9 +17,9 @@ Gm                     F               Eb
 The king of glory, the king above all kings`
 ```
 
-```javascript
+###Test de la función sustainTransposer con textParser
 
-// * test de la función sustainTransposer con textParser
+```javascript
 
 console.log(textParse(sustainTransposer(chordParser(songs), 1)))
 ```
@@ -35,8 +33,9 @@ G#m                     F#               E
 The king of glory, the king above all kings
 ```
 
+###Test de la función bemolTransposer con textParser
+
 ```javascript
-// * test de la función bemolTransposer con textParser
 
 console.log(textParse(bemolTransposer(chordParser(songs), 1)))
 ```
@@ -50,8 +49,9 @@ Abm                     Gb               E
 The king of glory, the king above all kings
 ```
 
+###Test de la función weirdTransposer con textParser
+
 ```javascript
-// * test de la función weirdTransposer con textParser
 
 console.log(textParse(weirdTransposer(chordParser(songs), 12)))
 ```
@@ -65,8 +65,9 @@ Gm                     F               E&
 The king of glory, the king above all kings
 ```
 
+###Test de la función sustainTransposer con htmlParser
+
 ```javascript
-// * test de la función sustainTransposer con htmlParser
 
 console.log(htmlParse(sustainTransposer(chordParser(songs))))
 ```
@@ -82,8 +83,9 @@ Gm                     F               D#
 </div>
 ```
 
+###Test de la función bemolTransposer con htmlParser
+
 ```javascript
-// * test de la función bemolTransposer con htmlParser
 
 console.log(htmlParse(bemolTransposer(chordParser(songs))))
 ```
@@ -99,8 +101,9 @@ Gm                     F               Eb
 </div>
 ```
 
+###Test de la función weirdTransposer con htmlParser
+
 ```javascript
-// * test de la función weirdTransposer con htmlParser
 
 console.log(htmlParse(weirdTransposer(chordParser(songs))))
 ```
