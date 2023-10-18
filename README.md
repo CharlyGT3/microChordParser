@@ -17,7 +17,7 @@ Gm                     F               Eb
 The king of glory, the king above all kings`
 ```
 
-###Test de la función sustainTransposer con textParser
+### Test de la función sustainTransposer con textParser
 
 ```javascript
 
@@ -33,7 +33,7 @@ G#m                     F#               E
 The king of glory, the king above all kings
 ```
 
-###Test de la función bemolTransposer con textParser
+### Test de la función bemolTransposer con textParser
 
 ```javascript
 
@@ -49,7 +49,7 @@ Abm                     Gb               E
 The king of glory, the king above all kings
 ```
 
-###Test de la función weirdTransposer con textParser
+### Test de la función weirdTransposer con textParser
 
 ```javascript
 
@@ -65,7 +65,7 @@ Gm                     F               E&
 The king of glory, the king above all kings
 ```
 
-###Test de la función sustainTransposer con htmlParser
+### Test de la función sustainTransposer con htmlParser
 
 ```javascript
 
@@ -83,7 +83,7 @@ Gm                     F               D#
 </div>
 ```
 
-###Test de la función bemolTransposer con htmlParser
+### Test de la función bemolTransposer con htmlParser
 
 ```javascript
 
