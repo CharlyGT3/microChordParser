@@ -91,3 +91,5 @@ Gm                     F               Eb
 <div class="letter">The king of glory, the king above all kings</div>
 </div>
 ```
+
+As you can see, I always transpose when parsing, as it is a way to correct the type of notation to be used. However, it is not necessary if no transposition is needed; it's more of a best practice.
