@@ -138,7 +138,7 @@ function parser(objet, init, initBreack, finishBreack, finish) {
         result += ' ';
         break;
       case 'letter' in chord:
-        result += initBreack + chord.letter + finishBreack;
+        result += i == 0 || 'letter' in objet[i - 1] ? chord.letter + finishBreack : initBreack + chord.letter + finishBreack;
         break;
       case 'note' in chord:
         result += chord.note;
