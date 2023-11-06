@@ -23,48 +23,37 @@ const regNote = /^ *[A-Ga-g](#|b|&)?m?\+?(sus|add|maj|dim|aug)?[0-9]?( *(-|\/) *
  */
 
 export const chordParser = (song) => {
+  let result = [];
+  const lines = song.split('\n');
+  const charLists = {
+    note: notes,
+    chord: chords,
+    interval: intervals,
+    bass: bass,
+    space: [' ']
+  };
 
-  const lines = song.split('\n')
-  let result = []
-
-  for (let i = 0; i < lines.length; i++) {
-
-    const line = lines[i]
-    const isChords = regNote.test(line)
-
-    if (isChords) {
+  for (const line of lines) {
+    if (regNote.test(line)) {
       for (let j = 0; j < line.length; j++) {
-        const char = line[j]
-        const nextChar = line[j + 1]
-        switch (true) {
-          case notes.includes(char):
-            if (accidentals.includes(nextChar)) {
-              result.push({ note: char + nextChar });
-            } else {
-              result.push({ note: char });
-            }
+        const char = line[j];
+        const nextChar = j + 1 < line.length ? line[j + 1] : '0';
+
+        for (const [key, value] of Object.entries(charLists)) {
+          if (value.includes(char)) {
+            const noteValue = accidentals.includes(nextChar) ? char + nextChar : char;
+            result.push({ [key]: noteValue });
             break;
-          case chords.includes(char):
-            result.push({ chord: char });
-            break;
-          case intervals.includes(char):
-            result.push({ interval: char });
-            break;
-          case bass.includes(char):
-            result.push({ bass: char });
-            break;
-          case char === ' ':
-            result.push({ space: char });
-            break;  
-          default:
-            break;
+          }
         }
       }
     } else {
-      result.push({ letter: line })
+      result.push({ letter: line });
     }
+    result.push({ letter: '\n' });
   }
-  return result
+
+  return result;
 }
 
 /**
@@ -73,7 +62,7 @@ export const chordParser = (song) => {
  * @returns {string} devuelve un string con de la canción y los acordes
  */
 
-export const textParser = (objet) => parser(objet, '', '\n', '\n', '')
+export const textParser = (objet) => parser(objet, '', '', '', '')
 
 /**
  * Esta función es para crear un string especial para html de una canción con acordes a partir de un objeto que posea las notas, acordes, intervalos y bajos
@@ -107,20 +96,15 @@ function chordTransposer(objet, semitone, noteTypeSelect) {
 
   let result = structuredClone(objet)
 
-  for (let i = 0; i < result.length; i++) {
-    if (result[i].note) {
-      let index;
-      switch (true) {
-        case notesSustain.includes(result[i].note):
-          index = notesSustain.indexOf(result[i].note);
-          result[i].note = noteTypeSelect[rangeAdjust(index + semitone)];
+  for (const item of result) {
+    if (item.note) {
+      let noteTypes = [notesSustain, notesBemol];
+      for (const noteType of noteTypes) {
+        if (noteType.includes(item.note)) {
+          let index = noteType.indexOf(item.note);
+          item.note = noteTypeSelect[rangeAdjust(index + semitone)];
           break;
-        case notesBemol.includes(result[i].note):
-          index = notesBemol.indexOf(result[i].note);
-          result[i].note = noteTypeSelect[rangeAdjust(index + semitone)];
-          break;
-        default:
-          break;
+        }
       }
     }
   }
@@ -128,48 +112,29 @@ function chordTransposer(objet, semitone, noteTypeSelect) {
 }
 
 function parser(objet, init, initBreack, finishBreack, finish) {
-
   let result = init
 
-  for (let i = 0; i < objet.length; i++) {
-    const chord = objet[i]
-    switch (true) {
-      case 'space' in chord:
-        result += ' ';
+  const handlers = {
+    'space': () => ' ',
+    'letter': (chord) => chord.letter == '\n' ? chord.letter : initBreack + chord.letter + finishBreack,
+    'note': (chord) => chord.note,
+    'chord': (chord) => chord.chord,
+    'interval': (chord) => chord.interval,
+    'bass': (chord) => chord.bass
+  }
+
+  for (const chord of objet) {
+    for (const key in handlers) {
+      if (key in chord) {
+        result += handlers[key](chord);
         break;
-      case 'letter' in chord:
-        result += i == 0 || 'letter' in objet[i - 1] ? chord.letter + finishBreack : initBreack + chord.letter + finishBreack;
-        break;
-      case 'note' in chord:
-        result += chord.note;
-        break;
-      case 'chord' in chord:
-        result += chord.chord;
-        break;
-      case 'interval' in chord:
-        result += chord.interval;
-        break;
-      case 'bass' in chord:
-        result += chord.bass;
-        break;
-      default:
-        break;
-    }    
+      }
+    }
   }
   return result + finish
 }
 
 function rangeAdjust(number) {
-
-  const max = 11;
-  const min = 0;
-
-  while (number < min) {
-    number += max + 1;
-  }
-  while (number > max) {
-    number -= max + 1;
-  }
-
-  return number;
+  const rangeSize = 12;
+  return ((number % rangeSize) + rangeSize) % rangeSize;
 }
